@@ -1,37 +1,23 @@
-# Бизнес-План Студии Йоги
+# Yoga Studio Business Plan Generator
 
-Интерактивное приложение для разработки бизнес-плана студии йоги с учетом требований фонда DAMU.
+## Overview
+An interactive business plan generator for yoga studios, specifically designed to meet DAMU fund requirements.
 
-## Возможности
+## Features
+- Business plan template generation
+- Financial projection calculator
+- Market analysis tools
 
-- Пошаговое создание бизнес-плана
-- Анализ рынка и конкурентов
-- Маркетинговый план
-- Финансовое планирование
-- Расчет окупаемости
-- План реализации проекта
+## Setup Instructions
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Run the application: `npm start`
 
-## Технологии
-
+## Technologies
 - React
-- Next.js
+- TypeScript
 - Tailwind CSS
-- shadcn/ui
 - Recharts
 
-## Установка
-
-1. Клонируйте репозиторий
-2. Установите зависимости: `npm install`
-3. Запустите приложение: `npm run dev`
-
-## Структура проекта
-
-- `/src/app` - Основные страницы приложения
-- `/src/components` - React компоненты
-- `/src/lib` - Вспомогательные функции
-- `/public` - Статические файлы
-
-## Лицензия
-
-MIT
+## Contributing
+Please read CONTRIBUTING.md for details on our code of conduct and the process for submitting pull requests.
