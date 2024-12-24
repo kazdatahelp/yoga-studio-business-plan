@@ -1,23 +1,41 @@
-# Yoga Studio Business Plan Generator
+# 🧘 Yoga Studio Business Plan Generator for DAMU Fund
 
-## Overview
-An interactive business plan generator for yoga studios, specifically designed to meet DAMU fund requirements.
+## 🌟 Overview
+An interactive web application to generate comprehensive business plans for yoga studios, specifically tailored to meet DAMU fund requirements in Kazakhstan.
 
-## Features
-- Business plan template generation
+## ✨ Features
+- Step-by-step business plan creation
+- DAMU fund requirement validation
 - Financial projection calculator
 - Market analysis tools
 
-## Setup Instructions
-1. Clone the repository
-2. Install dependencies: `npm install`
-3. Run the application: `npm start`
-
-## Technologies
+## 🚀 Tech Stack
 - React
 - TypeScript
 - Tailwind CSS
 - Recharts
 
-## Contributing
-Please read CONTRIBUTING.md for details on our code of conduct and the process for submitting pull requests.
+## 📦 Prerequisites
+- Node.js (v18+)
+- npm or yarn
+
+## 🔧 Installation
+1. Clone the repository
+   ```bash
+   git clone https://github.com/kazdatahelp/yoga-studio-business-plan.git
+   ```
+2. Install dependencies
+   ```bash
+   cd yoga-studio-business-plan
+   npm install
+   ```
+3. Start the development server
+   ```bash
+   npm start
+   ```
+
+## 📝 Contributing
+Contributions are welcome! Please check our [contributing guidelines](CONTRIBUTING.md).
+
+## 📄 License
+This project is licensed under the MIT License.
