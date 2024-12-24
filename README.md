@@ -1,42 +1,135 @@
 # Yoga Studio Business Plan Generator
 
-Interactive business plan generator and tracker for yoga studio projects with DAMU fund requirements support.
+Интерактивный генератор бизнес-плана для студии йоги, соответствующий требованиям фонда ДАМУ.
 
-## Features
+## Структура бизнес-плана
 
-- Step-by-step business plan creation
-- DAMU fund requirements compliance
-- Financial calculations and projections
-- PDF export functionality
-- Progress tracking
+Приложение реализует полную структуру бизнес-плана по требованиям ДАМУ:
 
-## Tech Stack
+1. Резюме
+   - Общая информация о проекте
+   - Цели и задачи
+   - Ключевые особенности
+   - Бизнес-модель
 
-- React
-- TypeScript
+2. Введение
+   - Сумма финансирования
+   - Сроки кредитования
+   - Целевое использование
+
+3. Концепция
+   - Описание компании
+   - Анализ отрасли
+   - Перспективы развития
+   - Конкурентные преимущества
+
+4. Продукт
+   - Описание продукта
+   - Характеристики
+   - Стадия разработки
+   - Патенты
+
+5. Производство
+   - Процесс производства
+   - Мощности
+   - Оборудование
+   - План производства
+
+6. Маркетинг
+   - Анализ рынка
+   - Целевая аудитория
+   - Конкуренты
+   - Продвижение
+   - Ценообразование
+
+7. Финансы
+   - Инвестиции
+   - Доходы
+   - Расходы
+   - Движение средств
+   - Точка безубыточности
+   - Источники финансирования
+   - Показатели NPV/IRR
+   - Риски
+
+8. План внедрения
+   - Оборудование
+   - Процессы
+   - Помещение
+   - Сроки
+
+## Основные функции
+
+- Пошаговое заполнение всех разделов бизнес-плана
+- Валидация данных по требованиям ДАМУ
+- Отслеживание прогресса заполнения
+- Финансовые расчеты и прогнозы
+- Экспорт в PDF
+
+## Технический стек
+
+- React + TypeScript
 - Tailwind CSS
-- shadcn/ui components
+- shadcn/ui компоненты
+- Context API для управления состоянием
 
-## Getting Started
-
-```bash
-npm install
-npm run dev
-```
-
-## Project Structure
+## Структура проекта
 
 ```
 src/
-  ├── app/
-  │   └── page.tsx          # Main page component
-  ├── components/           # React components
-  │   ├── BusinessPlanApp.tsx   # Main application component
-  │   ├── SummaryForm/      # Project summary section
-  │   ├── MarketAnalysis/   # Market analysis section
-  │   ├── MarketingPlan/    # Marketing plan section
-  │   ├── Operations/       # Operations section
-  │   ├── TeamStructure/    # Team and personnel section
-  │   └── FinancialPlan/    # Financial planning section
-  └── lib/                  # Utility functions and helpers
+├── app/                    # Next.js app router
+│   ├── layout.tsx         # Основной layout
+│   └── page.tsx           # Главная страница
+├── components/            # React компоненты
+│   ├── BusinessPlanApp.tsx       # Основной компонент приложения
+│   ├── BusinessPlanGenerator.tsx # Генератор бизнес-плана
+│   ├── YogaStudioBusinessPlan.tsx# Специализированный план для йога студии
+│   ├── ui/                       # UI компоненты
+│   │   ├── button.tsx
+│   │   ├── card.tsx
+│   │   ├── dialog.tsx
+│   │   └── ...
+│   └── forms/                    # Формы для разделов
+├── context/               # React контексты
+│   └── BusinessPlanContext.tsx   # Управление состоянием бизнес-плана
+├── lib/                  # Утилиты и хелперы
+│   ├── validation.ts    # Валидация данных
+│   └── financialCalculations.ts  # Финансовые расчеты
+└── utils/               # Вспомогательные функции
+    ├── formatters.ts   # Форматирование данных
+    └── damuValidation.ts # Валидация по требованиям ДАМУ
 ```
+
+## Установка и запуск
+
+1. Клонируйте репозиторий:
+```bash
+git clone https://github.com/yourusername/yoga-studio-business-plan.git
+cd yoga-studio-business-plan
+```
+
+2. Установите зависимости:
+```bash
+npm install
+```
+
+3. Запустите приложение:
+```bash
+npm run dev
+```
+
+4. Откройте [http://localhost:3000](http://localhost:3000) в браузере.
+
+## Использование
+
+1. На главной странице отображаются основные показатели и прогресс заполнения
+2. Нажмите "Бизнес-План" для начала заполнения
+3. Последовательно заполните все разделы, следуя подсказкам
+4. Используйте кнопку "Скачать PDF" для экспорта готового бизнес-плана
+
+## Валидация данных
+
+- Минимальная сумма инвестиций: 5,000,000 KZT
+- Максимальный срок окупаемости: 36 месяцев
+- Минимальная рентабельность: 15%
+- Обязательное заполнение всех ключевых разделов
