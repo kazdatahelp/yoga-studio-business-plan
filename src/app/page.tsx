@@ -1,5 +1,7 @@
-import BusinessPlanApp from '../components/BusinessPlanApp';
+'use client';
+
+import YogaStudioBusinessPlan from '../components/YogaStudioBusinessPlan';
 
 export default function Home() {
-  return <BusinessPlanApp />;
+  return <YogaStudioBusinessPlan />;
 }

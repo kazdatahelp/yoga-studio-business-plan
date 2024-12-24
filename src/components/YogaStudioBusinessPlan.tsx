@@ -1,4 +1,4 @@
-  'use client';
+'use client';
 
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from './ui/card';
@@ -37,8 +37,6 @@ const YogaStudioBusinessPlan = () => {
   ];
 
   const renderSection = () => {
-    const section = navigation.find(item => item.id === currentSection);
-    
     if (currentSection === 'home') {
       return (
         <Card>
@@ -50,19 +48,19 @@ const YogaStudioBusinessPlan = () => {
               <Card>
                 <CardContent className="p-4">
                   <p className="text-sm text-gray-500">Инвестиции</p>
-                  <p className="text-2xl font-bold">7.8 млн ₸</p>
+                  <p className="text-2xl font-bold">{state.financialPlan.investment.toLocaleString('ru-RU')} ₸</p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-4">
                   <p className="text-sm text-gray-500">Окупаемость</p>
-                  <p className="text-2xl font-bold">15 мес</p>
+                  <p className="text-2xl font-bold">{state.projectSummary.paybackPeriod} мес</p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-4">
                   <p className="text-sm text-gray-500">Рентабельность</p>
-                  <p className="text-2xl font-bold">30%</p>
+                  <p className="text-2xl font-bold">{state.financialPlan.profitability}%</p>
                 </CardContent>
               </Card>
             </div>

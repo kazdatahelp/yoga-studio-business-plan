@@ -1,8 +1,7 @@
 'use client';
 
-import React, { createContext, useReducer, useContext, Dispatch } from 'react';
+import React, { createContext, useReducer, useContext } from 'react';
 
-// Types for business plan state
 interface BusinessPlanState {
   projectSummary: {
     projectName: string;
@@ -24,7 +23,13 @@ interface BusinessPlanState {
   errors: string[];
 }
 
-// Initial state
+type Action =
+  | { type: 'UPDATE_PROJECT_SUMMARY'; payload: Partial<BusinessPlanState['projectSummary']> }
+  | { type: 'UPDATE_MARKET_ANALYSIS'; payload: Partial<BusinessPlanState['marketAnalysis']> }
+  | { type: 'UPDATE_FINANCIAL_PLAN'; payload: Partial<BusinessPlanState['financialPlan']> }
+  | { type: 'ADD_ERROR'; payload: string }
+  | { type: 'CLEAR_ERRORS' };
+
 const initialState: BusinessPlanState = {
   projectSummary: {
     projectName: '',
@@ -46,15 +51,6 @@ const initialState: BusinessPlanState = {
   errors: []
 };
 
-// Action types
-type Action = 
-  | { type: 'UPDATE_PROJECT_SUMMARY'; payload: Partial<BusinessPlanState['projectSummary']> }
-  | { type: 'UPDATE_MARKET_ANALYSIS'; payload: Partial<BusinessPlanState['marketAnalysis']> }
-  | { type: 'UPDATE_FINANCIAL_PLAN'; payload: Partial<BusinessPlanState['financialPlan']> }
-  | { type: 'ADD_ERROR'; payload: string }
-  | { type: 'CLEAR_ERRORS' };
-
-// Reducer function
 function businessPlanReducer(state: BusinessPlanState, action: Action): BusinessPlanState {
   switch (action.type) {
     case 'UPDATE_PROJECT_SUMMARY':
@@ -87,13 +83,14 @@ function businessPlanReducer(state: BusinessPlanState, action: Action): Business
   }
 }
 
-// Context and Provider
-const BusinessPlanContext = createContext<{
+type BusinessPlanContextType = {
   state: BusinessPlanState;
-  dispatch: Dispatch<Action>;
-} | undefined>(undefined);
+  dispatch: React.Dispatch<Action>;
+};
 
-export const BusinessPlanProvider: React.FC<{children: React.ReactNode}> = ({ children }) => {
+const BusinessPlanContext = createContext<BusinessPlanContextType | undefined>(undefined);
+
+export function BusinessPlanProvider({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = useReducer(businessPlanReducer, initialState);
 
   return (
@@ -101,13 +98,12 @@ export const BusinessPlanProvider: React.FC<{children: React.ReactNode}> = ({ ch
       {children}
     </BusinessPlanContext.Provider>
   );
-};
+}
 
-// Custom hook for using the context
-export const useBusinessPlan = () => {
+export function useBusinessPlan() {
   const context = useContext(BusinessPlanContext);
   if (context === undefined) {
     throw new Error('useBusinessPlan must be used within a BusinessPlanProvider');
   }
   return context;
-};
+}
