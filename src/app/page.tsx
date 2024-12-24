@@ -1,10 +1,5 @@
-import React from 'react';
-import YogaStudioBusinessPlan from '../components/YogaStudioBusinessPlan';
+import BusinessPlanApp from '../components/BusinessPlanApp';
 
 export default function Home() {
-  return (
-    <main>
-      <YogaStudioBusinessPlan />
-    </main>
-  );
+  return <BusinessPlanApp />;
 }
