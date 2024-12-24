@@ -1,4 +1,17 @@
-export const validateBusinessPlan = (planData: any) => {
+export interface FinancialPlan {
+  investment: number;
+  paybackPeriod: number;
+  profitability: number;
+}
+
+export interface BusinessPlan {
+  projectSummary?: unknown;
+  marketAnalysis?: unknown;
+  financialPlan?: FinancialPlan;
+  [key: string]: unknown | undefined;
+}
+
+export const validateBusinessPlan = (planData: BusinessPlan) => {
   const errors: string[] = [];
 
   const requiredSections = [
